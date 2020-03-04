@@ -10,40 +10,6 @@ public abstract class TemplateMethodTela extends JFrame{
     	templateMethod();
     	repaint();
     }
-    public TemplateMethodTela(String usuario){
-    	templateMethod(usuario);
-    	repaint();
-    }
-    
-    public void templateMethod(String usuario){
-    	setTitle("Fashion Designer Pattern");
-    	setIconImage(new ImageIcon(getClass().getResource("/icons8-terno-das-mulheres-30.png")).getImage());
-    	setLayout(null);
-        setResizable(false);
-    	setSize(500,400);
-    	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-     	setLocationRelativeTo(null);
-     	
-     	try {
-			for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-			    if ("Nimbus".equals(info.getName())) {
-			        UIManager.setLookAndFeel(info.getClassName());
-			        break;
-			    }
-			}
-			} catch (Exception e) {
-			   // If Nimbus is not available, you can set the GUI to another look and feel.
-			}
-     	
-     	adicionarBotoes();
-     	adicionarTextField();
-     	adicionarTabela();
-     	adicionarMenu();
-     	adicionarRadioButton();
-     	adicionarJComboBox();
-     	adicionarLabel(usuario);
-     	setVisible(true);
-    }
     public void templateMethod(){
     	setTitle("Fashion Designer Pattern");
     	setIconImage(new ImageIcon(getClass().getResource("/icons8-terno-das-mulheres-30.png")).getImage());
