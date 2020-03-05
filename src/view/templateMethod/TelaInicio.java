@@ -29,10 +29,10 @@ public class TelaInicio extends TemplateMethodTela {
 		sair.addActionListener(ouvinteSair);
 		add(sair);
 
-		OuvinteAdmin administrador = new OuvinteAdmin(this);
-		JButton admin = new JButton("Adiministrador",new ImageIcon(getClass().getResource("/icons8-usuário-homem-com-círculo-25.png")));
+		OuvinteAdmin cadastrar = new OuvinteAdmin(this);
+		JButton admin = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-usuário-homem-com-círculo-25.png")));
 		admin.setBounds(174, 250, 148, 30);
-		admin.addActionListener(administrador);
+		admin.addActionListener(cadastrar);
 		add(admin);
 	}
 
