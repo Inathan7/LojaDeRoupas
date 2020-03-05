@@ -8,9 +8,9 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
 import view.ouvintes.OuvinteAdicionarAdmin;
 import view.ouvintes.OuvinteVoltarTelaInicio;
-
 
 public class TelaCadastrarAdmin extends TemplateMethodTela{
 	private JTextField campoNome;
