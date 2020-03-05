@@ -1,12 +1,10 @@
 package view.templateMethod;
-
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import view.ouvintes.OuvinteAdmin;
+import view.ouvintes.OuvinteCadastrarAdmin;
 import view.ouvintes.OuvinteEntrar;
 import view.ouvintes.OuvinteSair;
 
@@ -29,7 +27,7 @@ public class TelaInicio extends TemplateMethodTela {
 		sair.addActionListener(ouvinteSair);
 		add(sair);
 
-		OuvinteAdmin cadastrar = new OuvinteAdmin(this);
+		OuvinteCadastrarAdmin cadastrar = new OuvinteCadastrarAdmin(this);
 		JButton admin = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-usuário-homem-com-círculo-25.png")));
 		admin.setBounds(174, 250, 148, 30);
 		admin.addActionListener(cadastrar);

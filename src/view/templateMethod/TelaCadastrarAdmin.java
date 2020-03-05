@@ -8,9 +8,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
-import view.ouvintes.OuvinteAdicionarAdmin;
-import view.ouvintes.OuvinteVoltarTelaInicio;
+import view.ouvintes.OuvinteCadastrarAdmin;
+import view.ouvintes.OuvinteVoltarPrimeiraTela;
 
 public class TelaCadastrarAdmin extends TemplateMethodTela{
 	private JTextField campoNome;
@@ -24,13 +23,13 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 	}
 	@Override
 	public void adicionarBotoes() {
-		OuvinteVoltarTelaInicio ouvinteVoltarTelaInicio = new OuvinteVoltarTelaInicio(this);
+		OuvinteVoltarPrimeiraTela ouvinteVoltarTelaInicio = new OuvinteVoltarPrimeiraTela(this);
 		JButton botao = new JButton("Voltar");
 		botao.setBounds(400, 10, 80, 30);
 		botao.addActionListener(ouvinteVoltarTelaInicio);
 		add(botao);
 		
-		OuvinteAdicionarAdmin ouvinteAdicionarAdmin = new OuvinteAdicionarAdmin(this);
+		OuvinteCadastrarAdmin ouvinteAdicionarAdmin = new OuvinteCadastrarAdmin(this);
 		JButton botaoCadastrar = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-adicionar-administrador-filled-28.png")));
 		botaoCadastrar.setBounds(172, 310, 128, 34);
 		botaoCadastrar.addActionListener(ouvinteAdicionarAdmin);
