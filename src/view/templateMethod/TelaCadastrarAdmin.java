@@ -8,8 +8,9 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import view.ouvintes.OuvinteCadastrarAdmin;
-import view.ouvintes.OuvinteVoltarPrimeiraTela;
+
+import view.ouvintes.OuvinteAdicionarAdmin;
+import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaCadastrarAdmin extends TemplateMethodTela{
 	private JTextField campoNome;
@@ -21,7 +22,7 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 	public TelaCadastrarAdmin() {
 		repaint();
 	}
-	@Override
+/*	@Override
 	public void adicionarBotoes() {
 		OuvinteVoltarPrimeiraTela ouvinteVoltarTelaInicio = new OuvinteVoltarPrimeiraTela(this);
 		JButton botao = new JButton("Voltar");
@@ -30,6 +31,22 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 		add(botao);
 		
 		OuvinteCadastrarAdmin ouvinteAdicionarAdmin = new OuvinteCadastrarAdmin(this);
+		JButton botaoCadastrar = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-adicionar-administrador-filled-28.png")));
+		botaoCadastrar.setBounds(172, 310, 128, 34);
+		botaoCadastrar.addActionListener(ouvinteAdicionarAdmin);
+		add(botaoCadastrar);
+	}
+*/
+	
+	
+	public void adicionarBotoes() {
+		OuvinteVoltarTelaInicio ouvinteVoltarTelaInicio = new OuvinteVoltarTelaInicio(this);
+		JButton botao = new JButton("Voltar");
+		botao.setBounds(400, 10, 80, 30);
+		botao.addActionListener(ouvinteVoltarTelaInicio);
+		add(botao);
+		
+		OuvinteAdicionarAdmin ouvinteAdicionarAdmin = new OuvinteAdicionarAdmin(this);
 		JButton botaoCadastrar = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-adicionar-administrador-filled-28.png")));
 		botaoCadastrar.setBounds(172, 310, 128, 34);
 		botaoCadastrar.addActionListener(ouvinteAdicionarAdmin);
