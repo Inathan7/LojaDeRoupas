@@ -11,6 +11,7 @@ import model.decorator.ValidacaoSenhaDecorator;
 import view.exception.EmailInvalidoException;
 import view.exception.SenhaInvalidaException;
 import view.templateMethod.TelaCadastrarAdmin;
+import view.templateMethod.TelaMenuPrincipal;
 
 public class OuvinteAdicionarAdmin implements ActionListener{
     private TelaCadastrarAdmin tca;
@@ -35,7 +36,7 @@ public class OuvinteAdicionarAdmin implements ActionListener{
 			    facade.adicionarAdministrador(a);
 				JOptionPane.showMessageDialog(null, "Foi cadastrado");
 				//facade.salvarDados();
-		//		new SegundaTela("Administrador");
+				new TelaMenuPrincipal();
 				tca.dispose();
 		   }
 		} catch (EmailInvalidoException e) {

@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import controller.facade.FacadeAdministracao;
+import view.templateMethod.TelaAdministrador;
 import view.templateMethod.TelaInicio;
 
 public class OuvinteEntrar implements ActionListener{
@@ -18,7 +19,7 @@ public class OuvinteEntrar implements ActionListener{
 			JOptionPane.showMessageDialog(ti, "NÃO PODE ENTRAR, NÃO EXISTE ADMINISTRADOR AINDA!", "ATENÇÂO!",JOptionPane.WARNING_MESSAGE);
 		}
 		else{
-			//		new SegundaTela("Cliente");
+			new TelaAdministrador();
 			ti.dispose();
 		}
 	}

@@ -10,6 +10,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import view.ouvintes.OuvinteAdicionarAdmin;
+import view.ouvintes.OuvinteVerSenha;
 import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaCadastrarAdmin extends TemplateMethodTela{
@@ -21,24 +22,7 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 
 	public TelaCadastrarAdmin() {
 		repaint();
-	}
-/*	@Override
-	public void adicionarBotoes() {
-		OuvinteVoltarPrimeiraTela ouvinteVoltarTelaInicio = new OuvinteVoltarPrimeiraTela(this);
-		JButton botao = new JButton("Voltar");
-		botao.setBounds(400, 10, 80, 30);
-		botao.addActionListener(ouvinteVoltarTelaInicio);
-		add(botao);
-		
-		OuvinteCadastrarAdmin ouvinteAdicionarAdmin = new OuvinteCadastrarAdmin(this);
-		JButton botaoCadastrar = new JButton("Cadastrar",new ImageIcon(getClass().getResource("/icons8-adicionar-administrador-filled-28.png")));
-		botaoCadastrar.setBounds(172, 310, 128, 34);
-		botaoCadastrar.addActionListener(ouvinteAdicionarAdmin);
-		add(botaoCadastrar);
-	}
-*/
-	
-	
+	}	
 	public void adicionarBotoes() {
 		OuvinteVoltarTelaInicio ouvinteVoltarTelaInicio = new OuvinteVoltarTelaInicio(this);
 		JButton botao = new JButton("Voltar");
@@ -72,9 +56,11 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 		senha.setBounds(80, 130, 50, 30);
 		add(senha);
 		
+		OuvinteVerSenha verSenha = new OuvinteVerSenha(this);
 		ver = new JLabel();
 		ver.setBounds(355, 130, 30, 30);
 		ver.setIcon(new ImageIcon(getClass().getResource("/icons8-invisível-30.png")));
+		ver.addMouseListener(verSenha);
 		add(ver);
 	}
 	@Override
@@ -117,10 +103,5 @@ public class TelaCadastrarAdmin extends TemplateMethodTela{
 
 	public JComboBox<String> getSexo() {
 		return sexo;
-	}
-	
-	
-	public static void main(String[] args) {
-		new TelaCadastrarAdmin();
 	}
 }

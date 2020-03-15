@@ -8,12 +8,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-
 import view.ouvintes.OuvinteAcessarAdmin;
 import view.ouvintes.OuvinteExcluirAdmin;
 import view.ouvintes.OuvinteRecuperarSenha;
 import view.ouvintes.OuvinteVerSenha;
-import view.ouvintes.OuvinteVoltarPrimeiraTela;
+import view.ouvintes.OuvinteVoltarTelaInicio;
 
 
 
@@ -28,7 +27,7 @@ public class TelaAdministrador extends TemplateMethodTela{
 	}
 	@Override
 	public void adicionarBotoes() {
-    	OuvinteVoltarPrimeiraTela opt = new OuvinteVoltarPrimeiraTela(this);
+    	OuvinteVoltarTelaInicio opt = new OuvinteVoltarTelaInicio(this);
 		JButton botao = new JButton("Voltar",new ImageIcon(getClass().getResource("/icons8-undo-20.png")));
 		botao.setBounds(380, 8, 105, 30);
 		botao.addActionListener(opt);

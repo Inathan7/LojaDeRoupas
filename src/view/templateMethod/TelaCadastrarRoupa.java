@@ -67,9 +67,5 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		add(campoTamanho);
 
 	}
-	
-	
-	public static void main(String[] args) {
-		new TelaCadastrarRoupa();
-	}
+
 }

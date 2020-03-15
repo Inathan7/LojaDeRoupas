@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import controller.facade.FacadeAdministracao;
 import model.Administrador;
 import view.templateMethod.TelaAdministrador;
+import view.templateMethod.TelaMenuPrincipal;
 
 
 public class OuvinteAcessarAdmin implements ActionListener{
@@ -29,7 +30,7 @@ public class OuvinteAcessarAdmin implements ActionListener{
             	   JOptionPane.showMessageDialog(null, "Campos preenchidos");
             	   JOptionPane.showMessageDialog(null, "Olá "+facadeAdmin.getAdministrador().getNome()+" Bem vindo(a)");
         
-            //	   new SegundaTela("Administrador");
+            	   new TelaMenuPrincipal();
             	   ta.dispose();
             	   }
         	   else{
