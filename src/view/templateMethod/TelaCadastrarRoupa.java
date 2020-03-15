@@ -4,6 +4,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import view.ouvintes.OuvinteVoltarTelaMenu;
+
 public class TelaCadastrarRoupa extends TemplateMethodTela{
 	
 	public TelaCadastrarRoupa() {
@@ -30,8 +32,9 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		add(buttonCadastrar);
 
 	// Adicionar Ouvinte
-
-		
+	//adicionei o ouvinte voltar para a tela de menu principal.
+		OuvinteVoltarTelaMenu ouvinteTelaMenu = new OuvinteVoltarTelaMenu(this);
+		buttonVoltar.addActionListener(ouvinteTelaMenu);
 	}
 
 	@Override

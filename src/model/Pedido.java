@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Pedido {
     private ArrayList<Roupa> roupas;
     private Cliente cliente;
+    private long ID_Pedido;
     
     Pedido(String email,String nome,String telefone,ArrayList<Roupa> roupas){
     	cliente = new Cliente(email, nome, telefone);
@@ -33,5 +34,14 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
+	public long getID_Pedido() {
+		return ID_Pedido;
+	}
+
+	public void setID_Pedido(long iD_Pedido) {
+		ID_Pedido = iD_Pedido;
+	}
     
+	
 }

@@ -10,6 +10,7 @@ import javax.swing.JMenuItem;
 
 import controller.facade.FacadeAdministracao;
 import view.ouvintes.OuvinteCadastrarRoupa;
+import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaMenuPrincipal extends TemplateMethodTela{
 
@@ -41,15 +42,25 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(-5, 2, 500, 30);
 		JMenu menu = new JMenu("Menu");
+		JMenu detalhes = new JMenu("Detalhes");
 		menu.setIcon(new ImageIcon(getClass().getResource("/icons8-menu-vertical-20.png")));
 		
 		OuvinteCadastrarRoupa ouvinteCadastrarRoupa = new OuvinteCadastrarRoupa(this);
 		JMenuItem cadastrarRoupa = new JMenuItem("Cadastrar Roupa");
 		cadastrarRoupa.addActionListener(ouvinteCadastrarRoupa);
+		JMenuItem listarRoupas = new JMenuItem("Lista de roupas");
+		JMenuItem pedidos = new JMenuItem("Pedidos");
 		
+		OuvinteVoltarTelaInicio ouvinteTelaInicio = new OuvinteVoltarTelaInicio(this);
+		JMenuItem sair = new JMenuItem("Sair");
+		sair.addActionListener(ouvinteTelaInicio);
 		//irei implementar mais coisas...
 		menu.add(cadastrarRoupa);
+		menu.add(listarRoupas);
+		menu.add(pedidos);
+		menu.add(sair);
 		menuBar.add(menu);
+		menuBar.add(detalhes);
 		add(menuBar);
 	}
 
