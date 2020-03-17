@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.ArrayList;
+
 import dao.RoupaDAO;
 import dao.abstractFactory.FabricaDAO;
 import dao.abstractFactory.FabricaDAOXML;
@@ -18,6 +20,9 @@ public class ControllerRoupa {
 	
 	public void addRoupa(String nome, float preco, String tamanho) {
 		roupaDAO.createRoupa(new Roupa(nome, preco, tamanho));
+	}
+	public ArrayList<Roupa> loadRoupa(){
+		return roupaDAO.load("roupas");
 	}
 
 }

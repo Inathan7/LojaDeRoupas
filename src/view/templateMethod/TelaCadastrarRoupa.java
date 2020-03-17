@@ -86,6 +86,9 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		public void actionPerformed(ActionEvent e) {
 			ControllerRoupa roupaCTL = new ControllerRoupa();
 			roupaCTL.addRoupa(campoRoupa.getText(), Float.parseFloat(campoPreco.getText()), campoTamanho.getText());
+			campoRoupa.setText("");
+			campoPreco.setText("");
+			campoTamanho.setText("");
 			JOptionPane.showMessageDialog(null, "Roupa Cadastrada");
 		}
 		

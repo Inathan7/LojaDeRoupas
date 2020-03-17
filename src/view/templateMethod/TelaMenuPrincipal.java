@@ -10,6 +10,7 @@ import javax.swing.JMenuItem;
 
 import controller.facade.FacadeAdministracao;
 import view.ouvintes.OuvinteCadastrarRoupa;
+import view.ouvintes.OuvinteListarRoupa;
 import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaMenuPrincipal extends TemplateMethodTela{
@@ -48,7 +49,9 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		OuvinteCadastrarRoupa ouvinteCadastrarRoupa = new OuvinteCadastrarRoupa(this);
 		JMenuItem cadastrarRoupa = new JMenuItem("Cadastrar Roupa");
 		cadastrarRoupa.addActionListener(ouvinteCadastrarRoupa);
+		OuvinteListarRoupa ouvinteListarRoupa = new OuvinteListarRoupa(this);
 		JMenuItem listarRoupas = new JMenuItem("Lista de roupas");
+		listarRoupas.addActionListener(ouvinteListarRoupa);
 		JMenuItem pedidos = new JMenuItem("Pedidos");
 		
 		OuvinteVoltarTelaInicio ouvinteTelaInicio = new OuvinteVoltarTelaInicio(this);
