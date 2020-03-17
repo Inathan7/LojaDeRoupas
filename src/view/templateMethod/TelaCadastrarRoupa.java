@@ -1,9 +1,14 @@
 package view.templateMethod;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import controller.ControllerRoupa;
 import view.ouvintes.OuvinteVoltarTelaMenu;
 
 public class TelaCadastrarRoupa extends TemplateMethodTela{
@@ -30,6 +35,9 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		buttonCadastrar = new JButton("Cadastrar");
 		buttonCadastrar.setBounds(100, 240, 90, 30);
 		add(buttonCadastrar);
+		
+		OuvinteCadastrarRoupa ouvinteCadastrarRoupa = new OuvinteCadastrarRoupa();
+		buttonCadastrar.addActionListener(ouvinteCadastrarRoupa);
 
 	// Adicionar Ouvinte
 	//adicionei o ouvinte voltar para a tela de menu principal.
@@ -70,5 +78,19 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		add(campoTamanho);
 
 	}
+	
+	
+	public class OuvinteCadastrarRoupa implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			ControllerRoupa roupaCTL = new ControllerRoupa();
+			roupaCTL.addRoupa(campoRoupa.getText(), Float.parseFloat(campoPreco.getText()), campoTamanho.getText());
+			JOptionPane.showMessageDialog(null, "Roupa Cadastrada");
+		}
+		
+	}
+	
+	
 
 }

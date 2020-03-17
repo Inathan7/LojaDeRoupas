@@ -6,9 +6,21 @@ public class Roupa {
 	private String nome;
 	private float preco;
 	private String tamanho;
-	private String tipo;
-	private int quantidadeEstoque;
-	private String descricacao;
+//	private String tipo;
+//	private int quantidadeEstoque;
+//	private String descricacao;
+	
+	public Roupa() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Roupa(String nome, float preco, String tamanho) {
+		
+		this.nome = nome;
+		this.preco = preco;
+		this.tamanho = tamanho;
+		
+	}
 	
 
 	public String getNome() {
@@ -35,33 +47,11 @@ public class Roupa {
 		this.tamanho = tamanho;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public int getQuantidadeEstoque() {
-		return quantidadeEstoque;
-	}
-
-	public void setQuantidadeEstoque(int quantidadeEstoque) {
-		this.quantidadeEstoque = quantidadeEstoque;
-	}
-
-	public String getDescricacao() {
-		return descricacao;
-	}
-
-	public void setDescricacao(String descricacao) {
-		this.descricacao = descricacao;
-	}
 
 	public int getId() {
 		return id;
 	}
+
 
 	public void setId(int id) {
 		this.id = id;

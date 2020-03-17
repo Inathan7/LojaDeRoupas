@@ -46,10 +46,10 @@ public class RoupaDAOJDBC implements RoupaDAO{
 	public void createRoupa(Roupa roupa) {
 		String nome = "'" + roupa.getNome() + "'";
 		String preco = "'" + roupa.getPreco() + "'";
-		String descricao = "'" + roupa.getDescricacao() + "'";
+//		String descricao = "'" + roupa.getDescricacao() + "'";
 		String tamanho = "'" + roupa.getTamanho() + "'";
-		String quantEstoque = "'" + roupa.getQuantidadeEstoque() + "'";
-		String query = "(" + nome + ", " + descricao + ", " + ", " + preco + ", " + tamanho + ", " + quantEstoque;
+//		String quantEstoque = "'" + roupa.getQuantidadeEstoque() + "'";
+		String query = "(" + nome + ", " + ", " + preco + ", " + tamanho;
 		
 		if(connectionBD.isConnectionValid()) {
 			try {

@@ -28,8 +28,8 @@ public class RoupaDAOXML implements RoupaDAO{
 	}
 
 	@Override
-	public void save(String tapiocaArquivo) {
-		arquivo = new File(tapiocaArquivo + ".xml");
+	public void save(String roupaArquivo) {
+		arquivo = new File(roupaArquivo + ".xml");
 		String xml = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>\n";
 		xml += xstream.toXML(roupas);
 		try {
