@@ -13,13 +13,16 @@ public class Roupa {
 	public Roupa() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Roupa(String nome, float preco, String tamanho) {
+	/*
+	 * Adicionei o id no parametro do construtor de roupa, antes ele não estava
+	 * sendo iniciado.
+	 */
+	public Roupa(String nome, float preco, String tamanho,int id) {
 		
 		this.nome = nome;
 		this.preco = preco;
 		this.tamanho = tamanho;
-		
+		this.id = id;
 	}
 	
 

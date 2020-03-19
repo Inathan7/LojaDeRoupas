@@ -18,11 +18,25 @@ public class ControllerRoupa {
 		
 //	}
 	
-	public void addRoupa(String nome, float preco, String tamanho) {
-		roupaDAO.createRoupa(new Roupa(nome, preco, tamanho));
+	public void addRoupa(String nome, float preco, String tamanho,int id) {
+		roupaDAO.createRoupa(new Roupa(nome, preco, tamanho,id));
 	}
+	
 	public ArrayList<Roupa> loadRoupa(){
 		return roupaDAO.load("roupas");
+	}
+	/*
+	 * Adicionei o método de pesquisa para encontrar a roupa que o cliente escolheu
+	 * na TelaListarRoupa.
+	 */
+	public Roupa searchRoupa(int id){
+		ArrayList<Roupa> roupas = roupaDAO.load("roupas");
+		for(Roupa roupa:roupas){
+			if(id == roupa.getId()){
+				return roupa;
+			}
+		}
+		return null;
 	}
 
 }

@@ -2,6 +2,7 @@ package view.templateMethod;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -9,10 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controller.ControllerRoupa;
+import model.Roupa;
 import view.ouvintes.OuvinteVoltarTelaMenu;
 
 public class TelaCadastrarRoupa extends TemplateMethodTela{
-	
+	/*
+	 * Mudei o ouvinte cadastrar roupa que está nessa classe, eu explico tudo
+	 * no ouvinte que está abaixo.
+	 */
 	public TelaCadastrarRoupa() {
 		setTitle("Cadastrar Roupas");
 		setSize(600,350);
@@ -82,18 +87,25 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 	
 	public class OuvinteCadastrarRoupa implements ActionListener{
 
-		@Override
 		public void actionPerformed(ActionEvent e) {
+			/*
+			 * Mudei só a logica de cadastrar a roupa, já que agora precisa
+			 * do id para criar uma roupa.
+			 * 
+			 * Para gerar IDs diferentes eu usei o array das roupas cadastradas
+			 * no sistema, e fiz a logica de roupas.siza()+1, assim ele sempre vai
+			 * colocar o proximo indice do array para cada roupa que for cadastrada
+			 * como é feito em lista sequencial.
+			 */
 			ControllerRoupa roupaCTL = new ControllerRoupa();
-			roupaCTL.addRoupa(campoRoupa.getText(), Float.parseFloat(campoPreco.getText()), campoTamanho.getText());
+			ArrayList<Roupa> roupas = roupaCTL.loadRoupa();
+			roupaCTL.addRoupa(campoRoupa.getText(),
+							  Float.parseFloat(campoPreco.getText()),
+							  campoTamanho.getText(),roupas.size()+1);
 			campoRoupa.setText("");
 			campoPreco.setText("");
 			campoTamanho.setText("");
 			JOptionPane.showMessageDialog(null, "Roupa Cadastrada");
 		}
-		
 	}
-	
-	
-
 }

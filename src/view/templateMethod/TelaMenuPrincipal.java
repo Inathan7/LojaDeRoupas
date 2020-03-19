@@ -11,6 +11,7 @@ import javax.swing.JMenuItem;
 import controller.facade.FacadeAdministracao;
 import view.ouvintes.OuvinteCadastrarRoupa;
 import view.ouvintes.OuvinteListarRoupa;
+import view.ouvintes.OuvinteTelaCarrinho;
 import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaMenuPrincipal extends TemplateMethodTela{
@@ -40,6 +41,9 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 	
 	@Override
 	public void adicionarMenu() {
+		/*
+		 * Adicionei no menu um meuItem carrinho para poder ir para tela carrinho
+		 */
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(-5, 2, 500, 30);
 		JMenu menu = new JMenu("Menu");
@@ -54,6 +58,10 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		listarRoupas.addActionListener(ouvinteListarRoupa);
 		JMenuItem pedidos = new JMenuItem("Pedidos");
 		
+		OuvinteTelaCarrinho ouvinteCarrinho = new OuvinteTelaCarrinho(this);
+		JMenuItem carrinho = new JMenuItem("Carrinho");
+		carrinho.addActionListener(ouvinteCarrinho);
+		
 		OuvinteVoltarTelaInicio ouvinteTelaInicio = new OuvinteVoltarTelaInicio(this);
 		JMenuItem sair = new JMenuItem("Sair");
 		sair.addActionListener(ouvinteTelaInicio);
@@ -61,6 +69,7 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		menu.add(cadastrarRoupa);
 		menu.add(listarRoupas);
 		menu.add(pedidos);
+		menu.add(carrinho);
 		menu.add(sair);
 		menuBar.add(menu);
 		menuBar.add(detalhes);
