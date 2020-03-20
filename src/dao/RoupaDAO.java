@@ -6,7 +6,7 @@ import model.Roupa;
 
 public interface RoupaDAO {
 
-	public void save(String tapiocaArquivo);
+	public void save(String roupaArquivo);
 
 	public ArrayList<Roupa> load(String roupaArquivo);
 

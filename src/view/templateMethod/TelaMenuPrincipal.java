@@ -11,7 +11,9 @@ import javax.swing.JMenuItem;
 import controller.facade.FacadeAdministracao;
 import view.ouvintes.OuvinteCadastrarRoupa;
 import view.ouvintes.OuvinteListarRoupa;
+import view.ouvintes.OuvinteTelaCadastrarPedido;
 import view.ouvintes.OuvinteTelaCarrinho;
+import view.ouvintes.OuvinteTelaPedido;
 import view.ouvintes.OuvinteVoltarTelaInicio;
 
 public class TelaMenuPrincipal extends TemplateMethodTela{
@@ -53,10 +55,19 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		OuvinteCadastrarRoupa ouvinteCadastrarRoupa = new OuvinteCadastrarRoupa(this);
 		JMenuItem cadastrarRoupa = new JMenuItem("Cadastrar Roupa");
 		cadastrarRoupa.addActionListener(ouvinteCadastrarRoupa);
+		
+		OuvinteTelaCadastrarPedido ouvinteTelaCadastrarPedido = new OuvinteTelaCadastrarPedido(this);
+		JMenuItem cadastrarPedido = new JMenuItem("Cadastrar Pedido");
+		cadastrarPedido.addActionListener(ouvinteTelaCadastrarPedido);
+		
+		
 		OuvinteListarRoupa ouvinteListarRoupa = new OuvinteListarRoupa(this);
-		JMenuItem listarRoupas = new JMenuItem("Lista de roupas");
+		JMenuItem listarRoupas = new JMenuItem("Lista de Roupas");
 		listarRoupas.addActionListener(ouvinteListarRoupa);
+		
+		OuvinteTelaPedido ouvinteTelaPedido = new OuvinteTelaPedido(this);
 		JMenuItem pedidos = new JMenuItem("Pedidos");
+		pedidos.addActionListener(ouvinteTelaPedido);
 		
 		OuvinteTelaCarrinho ouvinteCarrinho = new OuvinteTelaCarrinho(this);
 		JMenuItem carrinho = new JMenuItem("Carrinho");
@@ -67,6 +78,7 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		sair.addActionListener(ouvinteTelaInicio);
 		//irei implementar mais coisas...
 		menu.add(cadastrarRoupa);
+		menu.add(cadastrarPedido);
 		menu.add(listarRoupas);
 		menu.add(pedidos);
 		menu.add(carrinho);

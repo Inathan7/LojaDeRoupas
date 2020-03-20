@@ -7,7 +7,7 @@ public class Pedido {
     private Cliente cliente;
     private long ID_Pedido;
     
-    Pedido(String email,String nome,String telefone,ArrayList<Roupa> roupas){
+    public Pedido(String email,String nome,String telefone,ArrayList<Roupa> roupas){
     	cliente = new Cliente(email, nome, telefone);
     	this.roupas = roupas;
     }
@@ -42,6 +42,5 @@ public class Pedido {
 	public void setID_Pedido(long iD_Pedido) {
 		ID_Pedido = iD_Pedido;
 	}
-    
 	
 }

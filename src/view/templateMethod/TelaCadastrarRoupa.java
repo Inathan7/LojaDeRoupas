@@ -18,6 +18,8 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 	 * Mudei o ouvinte cadastrar roupa que está nessa classe, eu explico tudo
 	 * no ouvinte que está abaixo.
 	 */
+	
+	
 	public TelaCadastrarRoupa() {
 		setTitle("Cadastrar Roupas");
 		setSize(600,350);
@@ -81,10 +83,15 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 		campoTamanho = new JTextField();
 		campoTamanho.setBounds(365, 150, 95, 30);
 		add(campoTamanho);
+		
+		
 
 	}
 	
 	
+
+
+
 	public class OuvinteCadastrarRoupa implements ActionListener{
 
 		public void actionPerformed(ActionEvent e) {
