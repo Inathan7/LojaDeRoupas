@@ -12,13 +12,19 @@ public class ControllerPedido {
 
 	private FabricaDAO fabricaDAO = new FabricaDAOXML();
 	private PedidoDAO pedidoDAO = fabricaDAO.criarPedidoDAO();
-
-	public void addPedido(String email, String nome, String telefone, ArrayList<Roupa> roupas) {
-		pedidoDAO.createPedido(new Pedido(email, nome, telefone, roupas));
+	
+	//modifiquei a entrada do método para receber o id
+	public void addPedido(long id,String email, String nome, String telefone, ArrayList<Roupa> roupas) {
+		pedidoDAO.createPedido(new Pedido(id,email, nome, telefone, roupas));
 	}
 
 	public ArrayList<Pedido> loadPedido(){
 		return pedidoDAO.load("pedidos");
+	}
+	//adicionei esse método para que devolva a quantidade de pedido para que essa
+	//lógica não esteja na view
+	public int quantidadeDePedidos(){
+		return pedidoDAO.load("pedidos").size();
 	}
 
 }

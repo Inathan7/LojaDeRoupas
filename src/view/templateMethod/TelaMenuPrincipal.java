@@ -56,11 +56,6 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		JMenuItem cadastrarRoupa = new JMenuItem("Cadastrar Roupa");
 		cadastrarRoupa.addActionListener(ouvinteCadastrarRoupa);
 		
-		OuvinteTelaCadastrarPedido ouvinteTelaCadastrarPedido = new OuvinteTelaCadastrarPedido(this);
-		JMenuItem cadastrarPedido = new JMenuItem("Cadastrar Pedido");
-		cadastrarPedido.addActionListener(ouvinteTelaCadastrarPedido);
-		
-		
 		OuvinteListarRoupa ouvinteListarRoupa = new OuvinteListarRoupa(this);
 		JMenuItem listarRoupas = new JMenuItem("Lista de Roupas");
 		listarRoupas.addActionListener(ouvinteListarRoupa);
@@ -78,7 +73,6 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		sair.addActionListener(ouvinteTelaInicio);
 		//irei implementar mais coisas...
 		menu.add(cadastrarRoupa);
-		menu.add(cadastrarPedido);
 		menu.add(listarRoupas);
 		menu.add(pedidos);
 		menu.add(carrinho);

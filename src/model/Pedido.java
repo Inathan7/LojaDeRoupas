@@ -7,9 +7,11 @@ public class Pedido {
     private Cliente cliente;
     private long ID_Pedido;
     
-    public Pedido(String email,String nome,String telefone,ArrayList<Roupa> roupas){
+    //Adicionei o id no construtor
+    public Pedido(long id_Pedido,String email,String nome,String telefone,ArrayList<Roupa> roupas){
     	cliente = new Cliente(email, nome, telefone);
     	this.roupas = roupas;
+    	this.ID_Pedido = id_Pedido;
     }
     
     public float precoTotal(){

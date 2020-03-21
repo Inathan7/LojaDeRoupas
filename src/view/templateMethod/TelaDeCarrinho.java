@@ -1,27 +1,30 @@
 package view.templateMethod;
 
 import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 import model.Carrinho;
 import model.Roupa;
+import view.ouvintes.OuvinteTelaCadastrarPedido;
 import view.ouvintes.OuvinteVoltarTelaMenu;
 
 public class TelaDeCarrinho extends TemplateMethodTela{
 	/*
 	 * Tela onde fica os produtos escolhido pelo cliente
+	 * Nessa tela onde fica fazer pedido, coloquei o ouvinte telaCadastrar pedido
+	 * para que o cliente cadastre o pedido a partir do seu carrinho
 	 */
 	public TelaDeCarrinho() {
 		repaint();
 	}
 	@Override
 	public void adicionarBotoes() {
+		OuvinteTelaCadastrarPedido ouvinteTelaCadastrarPedido = new OuvinteTelaCadastrarPedido(this);
 		JButton fazerPedido = new JButton("Fazer Pedido");
+        fazerPedido.addActionListener(ouvinteTelaCadastrarPedido);
 		JButton removerPedido = new JButton("Remover");
 		
 		OuvinteVoltarTelaMenu ouvinteVoltarTelaMenu = new OuvinteVoltarTelaMenu(this);

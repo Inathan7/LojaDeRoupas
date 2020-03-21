@@ -1,8 +1,11 @@
 package view.templateMethod;
 
 import java.awt.Font;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -10,10 +13,12 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controller.ControllerPedido;
-import view.ouvintes.OuvinteVoltarTelaMenu;
+import model.Carrinho;
+
+import model.Roupa;
 
 public class TelaCadastrarPedido extends TemplateMethodTela{
-
+	//Fiz a lógica de cadastrar pedido, está no ouvinte dessa classe
 	public TelaCadastrarPedido() {
 		setTitle("Cadastrar Pedido");
 		setSize(600,350);
@@ -39,9 +44,10 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 		
 		OuvinteCadastrarPedido ouvinteCadastrarPedido = new OuvinteCadastrarPedido();
 		buttonFazerPedido.addActionListener(ouvinteCadastrarPedido);
-
-		OuvinteVoltarTelaMenu ouvinteTelaMenu = new OuvinteVoltarTelaMenu(this);
-		buttonVoltar.addActionListener(ouvinteTelaMenu);
+		
+		OuvinteVoltarTelaCarrinho ouvinteVoltarTelaCarrinho = new OuvinteVoltarTelaCarrinho();
+		buttonVoltar.addActionListener(ouvinteVoltarTelaCarrinho);
+		
 	}
 
 	@Override
@@ -82,7 +88,14 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 		add(campoTelefone);
 
 	}
-	
+	public class OuvinteVoltarTelaCarrinho implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			new TelaDeCarrinho();
+			dispose();
+		}
+	}
 	
 	public class OuvinteCadastrarPedido implements ActionListener{
 
@@ -93,18 +106,39 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 			switch (opc) {
 			
 			case "Fazer Pedido":
-				new TelaCadastrarRoupa();
+				ControllerPedido pedidoCTL = new ControllerPedido();
+				//Pega as roupas escolhidas pelo o cliente, que está no singleton
+				//que é o carrinho
+				Carrinho carrinho = Carrinho.getInstance();
+				SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+			    Date d = new Date();
+			    String a = s.format(d);
+			    String[] datas = a.split("/");
+                datas[2]+=pedidoCTL.quantidadeDePedidos()+1;
+                long id = Long.parseLong(datas[2]);
+                //gera um id com a data do ano junto o tamanho de pedido, assim
+                //o id é unica a cada pedido
+				pedidoCTL.addPedido(id,campoEmail.getText(), campoNome.getText(),
+						campoTelefone.getText(),carrinho.getRoupa());
+				campoEmail.setText("");
+				campoNome.setText("");
+				campoTelefone.setText("");
+				JOptionPane.showMessageDialog(null, "Pedido Feito!");
+				//deleta as roupas salvas no singleton carrinho
+				//e depois volta para tela carrinho
+				carrinho.deleteRoupas();
+				new TelaDeCarrinho();
 				dispose();
 				break;
 
 			default:
-				ControllerPedido pedidoCTL = new ControllerPedido();
-			//	pedidoCTL.addPedido(email, nome, telefone, roupas);
-				campoEmail.setText("");
-				campoNome.setText("");
-				campoTelefone.setText("");
+
 				
 			// Ainda vou fazer essa parte da lógica, onde vou cadastrar o cliente e fazer a persistência dele.
+			
+			//Paulo - na hora que cria o pedido já é cadastrado o cliente, quando é passado os parametros do pedido,
+			//Como é visto na classe pedido, assim a persistencia de pedido já salva o pedido com o cliente dentro como atributo
+			//a lógica de cadastrar pedido está pegando e funcionando.
 				
 				break;
 			}
