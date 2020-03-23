@@ -1,5 +1,7 @@
 package view.templateMethod;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -55,16 +57,24 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 	@Override
 	public void adicionarJLabel() {
 		
+		JLabel labelTitulo = new JLabel("Cadastrar Roupas");
+		labelTitulo.setBounds(225, 80, 160, 30);
+		labelTitulo.setFont(new Font("Times new Roman", Font.BOLD, 20));
+		add(labelTitulo);
+		
 		JLabel labelRoupa = new JLabel("Roupa");
 		labelRoupa.setBounds(100, 110, 50, 30);
+		labelRoupa.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelRoupa);
 
 		JLabel labelPreco = new JLabel("Preço");
 		labelPreco.setBounds(100, 150, 50, 30);
+		labelPreco.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelPreco);
 		
 		JLabel labelTamanho = new JLabel("Tamanho");
 		labelTamanho.setBounds(290,150, 70, 30);
+		labelTamanho.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelTamanho);
 		
 	}

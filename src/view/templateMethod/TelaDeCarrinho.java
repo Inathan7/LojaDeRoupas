@@ -1,5 +1,6 @@
 package view.templateMethod;
 
+import java.awt.Font;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -41,8 +42,9 @@ public class TelaDeCarrinho extends TemplateMethodTela{
 
 	@Override
 	public void adicionarJLabel() {
-		JLabel pedidos = new JLabel("Pedidos no carrinho");
+		JLabel pedidos = new JLabel("Pedidos No Carrinho");
 		pedidos.setBounds(220, 8, 120, 30);
+		pedidos.setFont(new Font("Arial",Font.BOLD,12));
 		Carrinho carrinho = Carrinho.getInstance();
 		float total = 0;
 		for(Roupa r:carrinho.getRoupa()){
@@ -50,10 +52,11 @@ public class TelaDeCarrinho extends TemplateMethodTela{
 		}
 		JLabel totalAPagar = new JLabel("Total a pagar: "+total);
 		totalAPagar.setBounds(170, 300, 275, 30);
+		totalAPagar.setFont(new Font("Arial",Font.BOLD,12));
 		add(totalAPagar);
 		add(pedidos);
 	}
-
+	
 	@Override
 	public void adicionarTabela() {
 		DefaultTableModel model = new DefaultTableModel();

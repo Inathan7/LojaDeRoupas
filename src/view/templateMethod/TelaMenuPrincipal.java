@@ -39,6 +39,10 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		bemVindo.setBounds(150, 100, 200, 35);
 		bemVindo.setFont(new Font("Times new roman", Font.BOLD, 20));
 		add(bemVindo);
+		
+		JLabel fundo = new JLabel(new ImageIcon(getClass().getResource("/FundoPadrao.jpg")));
+		fundo.setBounds(0, 0, 500, 400);
+		add(fundo);
 	}
 	
 	@Override

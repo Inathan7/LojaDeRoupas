@@ -60,14 +60,17 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 		
 		JLabel labelEmail = new JLabel("Email");
 		labelEmail.setBounds(100, 110, 50, 30);
+		labelEmail.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelEmail);
 
 		JLabel labelNome = new JLabel("Nome");
 		labelNome.setBounds(100, 150, 50, 30);
+		labelNome.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelNome);
 		
 		JLabel labelTelefone = new JLabel("Telefone");
 		labelTelefone.setBounds(290,150, 70, 30);
+		labelTelefone.setFont(new Font("Arial",Font.BOLD,12));
 		add(labelTelefone);
 		
 	}

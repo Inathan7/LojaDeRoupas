@@ -54,10 +54,12 @@ public class TelaAdministrador extends TemplateMethodTela{
 		
 		JLabel email = new JLabel("E-mail");
 		email.setBounds(120, 100, 50, 30);
+		email.setFont(new Font("Arial",Font.BOLD,12));
 		add(email);
 		
 		JLabel senha = new JLabel("Senha");
 		senha.setBounds(120, 138, 50, 30);
+		senha.setFont(new Font("Arial",Font.BOLD,12));
 		add(senha);
 		
 		OuvinteVerSenha ovs = new OuvinteVerSenha(this);

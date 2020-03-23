@@ -2,12 +2,16 @@ package view.templateMethod;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
 public abstract class TemplateMethodTela extends JFrame{
     public TemplateMethodTela(){
     	templateMethod();
+    	JLabel fundo = new JLabel(new ImageIcon(getClass().getResource("/FundoPadrao.jpg")));
+		fundo.setBounds(0, 0, 600, 400);
+		add(fundo);
     	repaint();
     }
     public void templateMethod(){
