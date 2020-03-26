@@ -1,14 +1,20 @@
 package view.templateMethod;
 
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
 
 import controller.ControllerRoupa;
 import model.Carrinho;
@@ -22,6 +28,7 @@ public class TelaListarRoupa extends TemplateMethodTela{
 	 */
 	private JTable tabela;
 	private DefaultTableModel model;
+	private JTextField tfFiltro;
 	private ControllerRoupa controllerRoupa;
 	public TelaListarRoupa() {
 		repaint();
@@ -33,12 +40,26 @@ public class TelaListarRoupa extends TemplateMethodTela{
 		voltar.setBounds(400, 5, 80, 30);
 		voltar.addActionListener(voltarMenu);
 		add(voltar);
+		
+		OuvinteDoBtFiltro ouvinteDoBtFiltro = new OuvinteDoBtFiltro(this);
+		JButton btLupa =new JButton(new ImageIcon(getClass().getResource("/icons8-pesquisar-28.png")));
+		btLupa.setBounds(175, 5, 30, 30);
+		btLupa.setBackground(new Color(255,255,255,0));
+		btLupa.addActionListener(ouvinteDoBtFiltro);
+		add(btLupa);
 	}
 
 	@Override
 	public void adicionarJLabel() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void adicionarTextField() {
+		tfFiltro = new JTextField();
+		tfFiltro.setBounds(20, 5, 150, 30);
+		add(tfFiltro);
 	}
 	
 	@Override
@@ -89,7 +110,38 @@ public class TelaListarRoupa extends TemplateMethodTela{
 		public void mouseReleased(MouseEvent arg0) {
 			// TODO Auto-generated method stub
 		}
-
-		
 	}
+	
+	
+	public class OuvinteDoBtFiltro implements ActionListener{
+		private TelaListarRoupa telaListarRoupa;
+		public OuvinteDoBtFiltro(TelaListarRoupa telaListarRoupa) {
+			this.telaListarRoupa = telaListarRoupa;
+		}
+		public void actionPerformed(ActionEvent e) {
+			model = new DefaultTableModel();
+			model.addColumn("ID");
+			model.addColumn("Nome");
+			model.addColumn("Preço");
+			model.addColumn("Tamanho");
+			String filtro = tfFiltro.getText().toLowerCase();
+
+			for (Roupa roupa: controllerRoupa.loadRoupa()) {
+				if(roupa.getNome().toLowerCase().contains(filtro) || roupa.getTamanho().toLowerCase().contains(filtro)) {
+					Object[] row = new Object[] {
+							roupa.getId(),
+							roupa.getNome(),
+							roupa.getPreco(),
+							roupa.getTamanho()
+					};
+					model.addRow(row);
+				}else if(filtro==null){
+					adicionarTabela();
+				}
+			}
+
+			telaListarRoupa.tabela.setModel(model);
+			telaListarRoupa.repaint();	
+		}	
+	}	
 }
