@@ -2,6 +2,8 @@ package dao.abstractFactory;
 
 import dao.AdminDAO;
 import dao.AdminDAOXML;
+import dao.EncomendaDAO;
+import dao.EncomendaDAOXML;
 import dao.PedidoDAO;
 import dao.PedidoDAOXML;
 import dao.RoupaDAO;
@@ -22,6 +24,11 @@ public class FabricaDAOXML implements FabricaDAO{
 	@Override
 	public PedidoDAO criarPedidoDAO() {
 		return new PedidoDAOXML();
+	}
+
+	@Override
+	public EncomendaDAO criarEncomendaDAO() {
+		return new EncomendaDAOXML();
 	}
 
 }

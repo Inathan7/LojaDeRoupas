@@ -72,6 +72,10 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		JMenuItem carrinho = new JMenuItem("Carrinho");
 		carrinho.addActionListener(ouvinteCarrinho);
 		
+		JMenuItem cadastrarEncomenda = new JMenuItem("Cadastrar Encomenda");
+		
+		JMenuItem listaEncomenda = new JMenuItem("Lista de Encomendas");
+		
 		OuvinteVoltarTelaInicio ouvinteTelaInicio = new OuvinteVoltarTelaInicio(this);
 		JMenuItem sair = new JMenuItem("Sair");
 		sair.addActionListener(ouvinteTelaInicio);
@@ -80,6 +84,8 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		menu.add(listarRoupas);
 		menu.add(pedidos);
 		menu.add(carrinho);
+		menu.add(cadastrarEncomenda);
+		menu.add(listaEncomenda);
 		menu.add(sair);
 		menuBar.add(menu);
 		menuBar.add(detalhes);
