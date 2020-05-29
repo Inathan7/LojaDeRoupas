@@ -11,7 +11,7 @@ import javax.swing.JMenuItem;
 import controller.facade.FacadeAdministracao;
 import view.ouvintes.OuvinteCadastrarRoupa;
 import view.ouvintes.OuvinteListarRoupa;
-import view.ouvintes.OuvinteTelaCadastrarPedido;
+import view.ouvintes.OuvinteTelaCadastrarEncomenda;
 import view.ouvintes.OuvinteTelaCarrinho;
 import view.ouvintes.OuvinteTelaPedido;
 import view.ouvintes.OuvinteVoltarTelaInicio;
@@ -72,7 +72,9 @@ public class TelaMenuPrincipal extends TemplateMethodTela{
 		JMenuItem carrinho = new JMenuItem("Carrinho");
 		carrinho.addActionListener(ouvinteCarrinho);
 		
+		OuvinteTelaCadastrarEncomenda ouvinteTelaCadastrarEncomenda = new OuvinteTelaCadastrarEncomenda(this);
 		JMenuItem cadastrarEncomenda = new JMenuItem("Cadastrar Encomenda");
+		cadastrarEncomenda.addActionListener(ouvinteTelaCadastrarEncomenda);
 		
 		JMenuItem listaEncomenda = new JMenuItem("Lista de Encomendas");
 		

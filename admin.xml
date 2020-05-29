@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<list>
-  <model.Administrador>
-    <nome>admin</nome>
-    <email>admin@gmail.com</email>
-    <senha>rebelde10</senha>
-    <sexo>Masculino</sexo>
-  </model.Administrador>
-</list>

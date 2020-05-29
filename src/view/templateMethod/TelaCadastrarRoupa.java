@@ -3,20 +3,14 @@ package view.templateMethod;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import controller.ControllerRoupa;
-import model.Roupa;
 import view.ouvintes.OuvinteVoltarTelaMenu;
 
 public class TelaCadastrarRoupa extends TemplateMethodTela{
-	private TelaCadastrarRoupa tela;
 	/*
 	 * Mudei o ouvinte cadastrar roupa que está nessa classe, eu explico tudo
 	 * no ouvinte que está abaixo.
@@ -122,15 +116,19 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 			 * como é feito em lista sequencial.
 			 */
 			
+			/* EDIT 2
+			 * Mudei a lógica do incremento no ID, pois da forma antiga, a camada de negócio de acoplava com a view, 
+			 * já com o método no controller de Roupa isso não acontece mais. -Inathan
+			 */
+			
 			if(campoRoupa.getText().equals("") || campoPreco.getText().equals("") || campoTamanho.getText().equals("")) {
 				JOptionPane.showMessageDialog(tela, "Campo Vazio!");
 			}else {
 
 				ControllerRoupa roupaCTL = new ControllerRoupa();
-				ArrayList<Roupa> roupas = roupaCTL.loadRoupa(); // Acredito que essa linha acopla camada de negocio com interface.
 				roupaCTL.addRoupa(campoRoupa.getText(),
 						Float.parseFloat(campoPreco.getText()),
-						campoTamanho.getText(),roupas.size()+1);
+						campoTamanho.getText(),roupaCTL.contId());
 				campoRoupa.setText("");
 				campoPreco.setText("");
 				campoTamanho.setText("");

@@ -12,11 +12,7 @@ public class ControllerRoupa {
 	private FabricaDAO fabricaDAO = new FabricaDAOXML();
 	private RoupaDAO roupaDAO = fabricaDAO.criarRoupaDAO();
 	
-//	public ControllerRoupa(String nome, float preco, String tamanho) {
-		
-//		Roupa roupa = new Roupa(nome, preco, tamanho);
-		
-//	}
+	private ArrayList<Roupa> roupas;
 	
 	public void addRoupa(String nome, float preco, String tamanho,int id) {
 		roupaDAO.createRoupa(new Roupa(nome, preco, tamanho,id));
@@ -37,6 +33,11 @@ public class ControllerRoupa {
 			}
 		}
 		return null;
+	}
+	
+	public int contId() {
+		roupas = loadRoupa();
+		return roupas.size()+1;     // Essa lógica é feita para evitar o acoplamento entre camada de negócio e view.
 	}
 
 }
