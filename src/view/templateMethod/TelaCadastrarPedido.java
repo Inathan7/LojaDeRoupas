@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controller.ControllerPedido;
+import controller.facade.FacadeAdministracao;
 import model.Carrinho;
 
 import model.Roupa;
@@ -124,6 +125,12 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 				String[] datas = a.split("/");
 				datas[2]+=pedidoCTL.quantidadeDePedidos()+1;
 				long id = Long.parseLong(datas[2]);
+				//aviso adicionei o envio de email
+				
+				FacadeAdministracao facade = new FacadeAdministracao();
+				facade.enviarEmail(campoEmail.getText(), "Pedido feito", 
+						"Nome: "+campoNome.getText()+"\n"+"Telefone:"+campoTelefone);
+				
 				//gera um id com a data do ano junto o tamanho de pedido, assim
 				//o id é unica a cada pedido
 				pedidoCTL.addPedido(id,campoEmail.getText(), campoNome.getText(),
