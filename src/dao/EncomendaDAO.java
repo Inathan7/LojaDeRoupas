@@ -10,7 +10,7 @@ public interface EncomendaDAO {
 
 	public ArrayList<Encomenda> load(String encomendaArquivo);
 
-	public void createEncomenda(Encomenda encomenda);
+	public void createEncomenda(Encomenda encomenda) throws Exception;
 
 	public ArrayList<Encomenda> readEncomenda();
 

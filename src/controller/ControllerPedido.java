@@ -14,7 +14,7 @@ public class ControllerPedido {
 	private PedidoDAO pedidoDAO = fabricaDAO.criarPedidoDAO();
 	
 	//modifiquei a entrada do método para receber o id
-	public void addPedido(long id,String email, String nome, String telefone, ArrayList<Roupa> roupas) {
+	public void addPedido(long id,String email, String nome, String telefone, ArrayList<Roupa> roupas) throws Exception {
 		pedidoDAO.createPedido(new Pedido(id,email, nome, telefone, roupas));
 	}
 

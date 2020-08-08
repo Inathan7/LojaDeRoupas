@@ -14,7 +14,7 @@ public class ControllerRoupa {
 	
 	private ArrayList<Roupa> roupas;
 	
-	public void addRoupa(String nome, float preco, String tamanho,int id) {
+	public void addRoupa(String nome, float preco, String tamanho,int id) throws Exception {
 		roupaDAO.createRoupa(new Roupa(nome, preco, tamanho,id));
 	}
 	

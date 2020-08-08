@@ -59,12 +59,13 @@ public class PedidoDAOXML implements PedidoDAO{
 	}
 
 	@Override
-	public void createPedido(Pedido pedido) {
-	//	while (iteratorArrayRoupa.hasNext()){
-	//		Roupa tapiocaDaVez = (Roupa) iteratorArrayRoupa.next();
-		
-	//	}
-
+	public void createPedido(Pedido pedido)throws Exception {
+		while (iteratorArrayPedido.hasNext()) {
+			Pedido pedidoDaVez = (Pedido) iteratorArrayPedido.next();
+			if(pedido.getID_Pedido()==(pedidoDaVez.getID_Pedido())){
+				throw new Exception("Pedido duplicado");
+			}
+		}
 		pedidos.add(pedido);
 		save("pedidos");
 	}

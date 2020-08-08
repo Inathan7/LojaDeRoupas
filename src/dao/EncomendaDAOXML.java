@@ -60,7 +60,13 @@ public class EncomendaDAOXML implements EncomendaDAO{
 	}
 
 	@Override
-	public void createEncomenda(Encomenda encomenda) {
+	public void createEncomenda(Encomenda encomenda) throws Exception {
+		while (iteratorArrayEncomenda.hasNext()) {
+			Encomenda encomendaDaVez = (Encomenda) iteratorArrayEncomenda.next();
+			if(encomenda.getID_Encomenda()==(encomendaDaVez.getID_Encomenda())){
+				throw new Exception("Encomenda duplicada");
+			}
+		}
 		encomendas.add(encomenda);
 		save("encomendas");
 		

@@ -133,8 +133,13 @@ public class TelaCadastrarPedido extends TemplateMethodTela{
 				
 				//gera um id com a data do ano junto o tamanho de pedido, assim
 				//o id é unica a cada pedido
-				pedidoCTL.addPedido(id,campoEmail.getText(), campoNome.getText(),
-						campoTelefone.getText(),carrinho.getRoupa());
+				try {
+					pedidoCTL.addPedido(id,campoEmail.getText(), campoNome.getText(),
+							campoTelefone.getText(),carrinho.getRoupa());
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				campoEmail.setText("");
 				campoNome.setText("");
 				campoTelefone.setText("");

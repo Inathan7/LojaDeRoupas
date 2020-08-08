@@ -9,7 +9,7 @@ public interface PedidoDAO {
 
 	public ArrayList<Pedido> load(String pedidoArquivo);
 
-	public void createPedido(Pedido pedido);
+	public void createPedido(Pedido pedido) throws Exception;
 
 	public ArrayList<Pedido> readPedido();
 

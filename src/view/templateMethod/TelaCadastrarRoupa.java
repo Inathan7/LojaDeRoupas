@@ -126,9 +126,14 @@ public class TelaCadastrarRoupa extends TemplateMethodTela{
 			}else {
 
 				ControllerRoupa roupaCTL = new ControllerRoupa();
-				roupaCTL.addRoupa(campoRoupa.getText(),
-						Float.parseFloat(campoPreco.getText()),
-						campoTamanho.getText(),roupaCTL.contId());
+				try {
+					roupaCTL.addRoupa(campoRoupa.getText(),
+							Float.parseFloat(campoPreco.getText()),
+							campoTamanho.getText(),roupaCTL.contId());
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				campoRoupa.setText("");
 				campoPreco.setText("");
 				campoTamanho.setText("");

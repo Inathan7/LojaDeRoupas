@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+
+import model.Pedido;
 import model.Roupa;
 import model.iterator.IterarColecaoConcreto;
 import model.iterator.Iterator;
@@ -57,12 +59,13 @@ public class RoupaDAOXML implements RoupaDAO{
 	}
 
 	@Override
-	public void createRoupa(Roupa roupa) {
-	//	while (iteratorArrayRoupa.hasNext()){
-	//		Roupa tapiocaDaVez = (Roupa) iteratorArrayRoupa.next();
-		
-	//	}
-
+	public void createRoupa(Roupa roupa) throws Exception {
+		while (iteratorArrayRoupa.hasNext()) {
+			Roupa roupaDaVez = (Roupa) iteratorArrayRoupa.next();
+			if(roupa.getId()==(roupaDaVez.getId())){
+				throw new Exception("Roupa duplicada");
+			}
+		}
 		roupas.add(roupa);
 		save("roupas");
 	}

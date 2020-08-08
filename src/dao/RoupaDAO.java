@@ -10,7 +10,7 @@ public interface RoupaDAO {
 
 	public ArrayList<Roupa> load(String roupaArquivo);
 
-	public void createRoupa(Roupa roupa);
+	public void createRoupa(Roupa roupa) throws Exception;
 
 	public ArrayList<Roupa> readRoupa();
 

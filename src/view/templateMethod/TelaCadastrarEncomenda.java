@@ -128,8 +128,13 @@ public class OuvinteCadastrarEncomenda implements ActionListener{
 
 				ControllerEncomenda encomendaCTL = new ControllerEncomenda();
 				
-				encomendaCTL.addEncomenda(campoNomeCliente.getText(), campoRoupa.getText(), campoTamanho.getText(),
-						campoTelefone.getText(), campoDesc.getText(), encomendaCTL.contId());
+				try {
+					encomendaCTL.addEncomenda(campoNomeCliente.getText(), campoRoupa.getText(), campoTamanho.getText(),
+							campoTelefone.getText(), campoDesc.getText(), encomendaCTL.contId());
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				campoNomeCliente.setText("");
 				campoRoupa.setText("");

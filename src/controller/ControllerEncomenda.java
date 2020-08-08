@@ -15,7 +15,7 @@ public class ControllerEncomenda {
 	
 	private ArrayList<Encomenda> encomendas;
 	
-	public void addEncomenda(String nomeCliente, String nomeRoupa, String tamanhoRoupa, String telefone, String descricao, int ID_Encomenda) {
+	public void addEncomenda(String nomeCliente, String nomeRoupa, String tamanhoRoupa, String telefone, String descricao, int ID_Encomenda) throws Exception {
 		encomendaDAO.createEncomenda(new Encomenda(nomeCliente, nomeRoupa, tamanhoRoupa,telefone, descricao, ID_Encomenda));
 	}
 
