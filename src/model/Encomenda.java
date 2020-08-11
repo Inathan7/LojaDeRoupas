@@ -9,6 +9,10 @@ public class Encomenda {
 	private String descricao;
 	private int ID_Encomenda;
 	
+	public Encomenda() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public Encomenda(String nomeCliente, String nomeRoupa, String tamanhoRoupa, String telefone, String descricao, int ID_Encomenda) {
 		this.ID_Encomenda = ID_Encomenda;
 		this.nomeCliente = nomeCliente;

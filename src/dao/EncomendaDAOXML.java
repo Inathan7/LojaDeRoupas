@@ -11,7 +11,6 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
 import model.Encomenda;
-import model.Pedido;
 import model.iterator.IterarColecaoConcreto;
 import model.iterator.Iterator;
 

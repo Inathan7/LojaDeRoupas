@@ -10,9 +10,13 @@ public interface AdminDAO {
 	
 	public ArrayList<Administrador> load();
 	
-	public boolean createAdmin(Administrador administrador);
+	public boolean createAdminXML(Administrador admin);
 	
-	public void deleteAdmin();
+	public void createAdmin(Administrador admin);
+	
+	public void deleteAdminXML();
+	
+	public void deleteAdmin(Administrador admin);
 	
 	public Administrador readAdmin();
 }

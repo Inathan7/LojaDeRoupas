@@ -14,12 +14,12 @@ public class FacadeAdministracao {
 
 	public boolean adicionarAdministrador(Administrador admin){
 		//return central.adicionarAdministrador(admin);
-		return adminJDBC.createAdmin(admin);
+		return adminJDBC.createAdminXML(admin);
 	}
 
 	public void excluirAdministrador(){
 		//central.excluirAdministrador();	 
-		adminJDBC.deleteAdmin();
+		adminJDBC.deleteAdminXML();
 	}
 
 	public Administrador getAdministrador(){

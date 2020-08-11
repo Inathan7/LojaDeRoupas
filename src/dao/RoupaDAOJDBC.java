@@ -31,7 +31,7 @@ public class RoupaDAOJDBC implements RoupaDAO{
 	}
 
 	@Override
-	public void save(String tapiocaArquivo) {
+	public void save(String roupaArquivo) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -49,11 +49,11 @@ public class RoupaDAOJDBC implements RoupaDAO{
 //		String descricao = "'" + roupa.getDescricacao() + "'";
 		String tamanho = "'" + roupa.getTamanho() + "'";
 //		String quantEstoque = "'" + roupa.getQuantidadeEstoque() + "'";
-		String query = "(" + nome + ", " + ", " + preco + ", " + tamanho;
+		String query = "(" + nome + ", " + preco + ", " + tamanho + " )";
 		
 		if(connectionBD.isConnectionValid()) {
 			try {
-				connectionBD.getConnection().executeUpdate("insert into roupa (nome, descricao, preco, quantidadeEstoque) values "+ query);
+				connectionBD.getConnection().executeUpdate("insert into roupa (nome, preco, tamanho) values "+ query);
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -76,7 +76,7 @@ public class RoupaDAOJDBC implements RoupaDAO{
 		
 		if (connectionBD.isConnectionValid()) {
 			try {
-				ResultSet set = connectionBD.getConnection().executeQuery("select * from produto where id = " + id);
+				ResultSet set = connectionBD.getConnection().executeQuery("select * from roupa where id = " + id);
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -97,7 +97,7 @@ public class RoupaDAOJDBC implements RoupaDAO{
 		
 		if (connectionBD.isConnectionValid()) {
 			try {
-				connectionBD.getConnection().executeUpdate("delete from produto where id = " + id);
+				connectionBD.getConnection().executeUpdate("delete from roupa where id = " + id);
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}

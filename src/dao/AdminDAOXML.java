@@ -49,7 +49,7 @@ public class AdminDAOXML implements AdminDAO {
 	}
 
 	@Override
-	public boolean createAdmin(Administrador administrador) {
+	public boolean createAdminXML(Administrador administrador) {
 		// TODO Auto-generated method stub
 		admin = load();
 		if (admin.isEmpty()) {
@@ -62,7 +62,7 @@ public class AdminDAOXML implements AdminDAO {
 	}
 
 	@Override
-	public void deleteAdmin() {
+	public void deleteAdminXML() {
 		// TODO Auto-generated method stub
 		admin = load();
 		admin.remove(0);
@@ -75,5 +75,17 @@ public class AdminDAOXML implements AdminDAO {
 		if (admin.isEmpty())
 			return null;
 		return admin.get(0);
+	}
+
+	@Override
+	public void createAdmin(Administrador admin) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAdmin(Administrador admin) {
+		// TODO Auto-generated method stub
+		
 	}
 }

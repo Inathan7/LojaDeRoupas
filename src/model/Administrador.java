@@ -6,6 +6,10 @@ public class Administrador {
     private String senha;
     private String sexo;
     
+    public Administrador() {
+		// TODO Auto-generated constructor stub
+	}
+    
     public Administrador(String nome,String email,String senha,String sexo){
     	this.nome = nome;
     	this.email = email;
